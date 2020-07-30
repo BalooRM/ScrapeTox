@@ -6,13 +6,16 @@ from bs4 import BeautifulSoup
 
 
 #myurl = "http://risctox.istas.net/en/dn_risctox_ficha_sustancia.asp?id_sustancia=1024801"
-myurl = "http://risctox.istas.net/en/dn_risctox_ficha_sustancia.asp?id_sustancia=955332"
+#myurl = "http://risctox.istas.net/en/dn_risctox_ficha_sustancia.asp?id_sustancia=955332"
+myurl = "http://risctox.istas.net/en/dn_risctox_ficha_sustancia.asp?id_sustancia=959022"
 
 response = requests.get(myurl)
 print (response.text)
 
 soup = BeautifulSoup(response.text, "html.parser")
 mytags = soup.findAll('span')
+
+print (myurl)
 
 for mytag in mytags:
     print (mytag) # .replace('<span','\n<span'))
